@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19DFAE1F-FB84-4771-B6D7-F4526875A6E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FogCreek.Wasabi</RootNamespace>
+    <AssemblyName>WasabiRoslynGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>packages\Microsoft.CodeAnalysis.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>packages\Microsoft.CodeAnalysis.CSharp.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Desktop">
+      <HintPath>packages\Microsoft.CodeAnalysis.CSharp.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop">
+      <HintPath>packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Desktop">
+      <HintPath>packages\Microsoft.CodeAnalysis.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop">
+      <HintPath>packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>packages\System.Collections.Immutable.1.1.33-beta\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>packages\System.Reflection.Metadata.1.0.18-beta\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AST\CAccess.cs" />
+    <Compile Include="AST\CArgument.cs" />
+    <Compile Include="AST\CArgumentList.cs" />
+    <Compile Include="AST\CArrayClass.cs" />
+    <Compile Include="AST\CAsst.cs" />
+    <Compile Include="AST\CAttribute.cs" />
+    <Compile Include="AST\CAttributeList.cs" />
+    <Compile Include="AST\CBaseAccess.cs" />
+    <Compile Include="AST\CBinaryOperator.cs" />
+    <Compile Include="AST\CCase.cs" />
+    <Compile Include="AST\CCast.cs" />
+    <Compile Include="AST\CCatch.cs" />
+    <Compile Include="AST\CClass.cs" />
+    <Compile Include="AST\CClassConst.cs" />
+    <Compile Include="AST\CComment.cs" />
+    <Compile Include="AST\CComparison.cs" />
+    <Compile Include="AST\CConcat.cs" />
+    <Compile Include="AST\CConst.cs" />
+    <Compile Include="AST\CConstantExpression.cs" />
+    <Compile Include="AST\CDefaultAccess.cs" />
+    <Compile Include="AST\CDictionaryType.cs" />
+    <Compile Include="AST\CDim.cs" />
+    <Compile Include="AST\CDirective.cs" />
+    <Compile Include="AST\CDo.cs" />
+    <Compile Include="AST\CEnum.cs" />
+    <Compile Include="AST\CExit.cs" />
+    <Compile Include="AST\CExpression.cs" />
+    <Compile Include="AST\CExpressionStatement.cs" />
+    <Compile Include="AST\CField.cs" />
+    <Compile Include="AST\CFile.cs" />
+    <Compile Include="AST\CFinally.cs" />
+    <Compile Include="AST\CFor.cs" />
+    <Compile Include="AST\CForEach.cs" />
+    <Compile Include="AST\CFunction.cs" />
+    <Compile Include="AST\CFunctionType.cs" />
+    <Compile Include="AST\CGlobalAccess.cs" />
+    <Compile Include="AST\CHtml.cs" />
+    <Compile Include="AST\CIf.cs" />
+    <Compile Include="AST\CIgnore.cs" />
+    <Compile Include="AST\CInterface.cs" />
+    <Compile Include="AST\CLambdaExpression.cs" />
+    <Compile Include="AST\CLambdaFunction.cs" />
+    <Compile Include="AST\CLock.cs" />
+    <Compile Include="AST\CLogic.cs" />
+    <Compile Include="AST\CMath.cs" />
+    <Compile Include="AST\CMathUnary.cs" />
+    <Compile Include="AST\CMember.cs" />
+    <Compile Include="AST\CMemberAccess.cs" />
+    <Compile Include="AST\CMemberOverload.cs" />
+    <Compile Include="AST\CMemberVariable.cs" />
+    <Compile Include="AST\CMethod.cs" />
+    <Compile Include="AST\CNew.cs" />
+    <Compile Include="AST\CNewline.cs" />
+    <Compile Include="AST\CNode.cs" />
+    <Compile Include="AST\CNot.cs" />
+    <Compile Include="AST\COnError.cs" />
+    <Compile Include="AST\COnExit.cs" />
+    <Compile Include="AST\COption.cs" />
+    <Compile Include="AST\COptionalByRef.cs" />
+    <Compile Include="AST\CParameters.cs" />
+    <Compile Include="AST\CParenExpression.cs" />
+    <Compile Include="AST\CPictureOfExpression.cs" />
+    <Compile Include="AST\CProgram.cs" />
+    <Compile Include="AST\CProperty.cs" />
+    <Compile Include="AST\CReDim.cs" />
+    <Compile Include="AST\CReturn.cs" />
+    <Compile Include="AST\CScope.cs" />
+    <Compile Include="AST\CSelect.cs" />
+    <Compile Include="AST\CSpecialEqual.cs" />
+    <Compile Include="AST\CStatement.cs" />
+    <Compile Include="AST\CStatementBlock.cs" />
+    <Compile Include="AST\CTernary.cs" />
+    <Compile Include="AST\CThisAccess.cs" />
+    <Compile Include="AST\CThrow.cs" />
+    <Compile Include="AST\CToken.cs" />
+    <Compile Include="AST\CTry.cs" />
+    <Compile Include="AST\CTypeRef.cs" />
+    <Compile Include="AST\CUnaryOperator.cs" />
+    <Compile Include="AST\CUnionClass.cs" />
+    <Compile Include="AST\CVariable.cs" />
+    <Compile Include="AST\CVariableBase.cs" />
+    <Compile Include="AST\CWhile.cs" />
+    <Compile Include="AST\CWith.cs" />
+    <Compile Include="AST\CWithAccess.cs" />
+    <Compile Include="AST\IVariable.cs" />
+    <Compile Include="AST\IVisitor.cs" />
+    <Compile Include="AST\IAttributed.cs" />
+    <Compile Include="AST\IHasVisibility.cs" />
+    <Compile Include="BuiltIns.cs" />
+    <Compile Include="ClrImporter.cs" />
+    <Compile Include="CompileException.cs" />
+    <Compile Include="ICodeGenVisitor.cs" />
+    <Compile Include="AST\TokenTypes.cs" />
+    <Compile Include="CodeGenVisitor.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoslynExtensions.cs" />
+    <Compile Include="RoslynGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
